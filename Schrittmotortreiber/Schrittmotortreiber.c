@@ -55,7 +55,6 @@ void delay_us(int ms)
 void turn_motor(int16_t *steptime, int16_t *adcval, int16_t *zaehler) {
 	static uint16_t deltav_zaehler = 0;
 	static uint16_t deltav_zmax = 1500;
-	static uint8_t STEP_STATE = 0;
 	static uint16_t powerduration_steps = 0;
 	powerduration_steps =  *steptime>>1;
 	
@@ -87,53 +86,47 @@ void turn_motor(int16_t *steptime, int16_t *adcval, int16_t *zaehler) {
 	deltav_zaehler++;
 }
 
+void setAdValuetoTimerTOP() {
+	unsigned char sreg;
+	/* Save global interrupt flag */
+	sreg = SREG;
+	/* Disable interrupts */
+	cli();
+	/* Set TCNT0 to AD Value */
+	
+	TC1H = ADCW>>8;
+	OCR1C = ADCW;
+	/* Restore global interrupt flag */
+	SREG = sreg;
+}
 
 
 int main(void)
 {
-	DDRA = 0x0F; //Stepper Motor ouputs PA0 - PA3
+// 	Change CLOCK
+// 		CLKPR  = (1<<CLKPCE);
+// 		CLKPR = (0<<CLKPS1) | (0<<CLKPS1) | (0<<CLKPS2) | (0<<CLKPS3);
+
+	DDRA = 0x0F; //Stepper Motor ouputs PA0 - PA3	
+	DDRB = (1<<DDB1);
+	// Timer 0 ist für die Motor-Schritte zuständig    
+	TCCR1A = (1<<COM1A0);
+	TCCR1B = (1<<CS12) ;
+	//Timer-TOP-Registers
+	TC1H = 0x06;
+	OCR1C  = 0x1;
 	
-	// Timer 0 ist für die Motor-Schritte zuständig
-	// Timer 0 initialisieren, CTC, Prescaler 64	    
-	TCCR0A = (1<<WGM00);
-	TCCR0B = (1<<CS00) | (1<<CS01); // CLK:8 = 1MHz
-	OCR0A  = 0xAA;       //25us	
-	//OCR0B  = 0x00;       //25us	
-	// Timer 1 ist für die Schrittgeschwindigkeitsänderung zuständig
-//	TCCR1A = (1<<COM1A1);
-//	TCCR1B = (1<<CS13) | (1<<CS11) | (1<<CS10); // CLK:64 = 125kHz	
-//	OCR1C  = 128;       //128 = 1,024ms
-	TIMSK |=  (1<<OCIE0A)  ;  //Interrupt enable	
-	
-/*	TCNT1 = 10;		    //80us offset to timer 0	*/
+
+	TIMSK |=  (1<<OCIE1A)  ;  //Interrupt enable	
 
 	ADC_Init();  
 	// Interrupts global freigeben  
-	
-	sei();
-	//TCNT0H = 0;
-	TCNT0L = 0;
-	
+	TC1H = 0;
+	TCNT1 = 0;	
+
+	PORTA = (1<<PORTA0)	;
 	while(1)
 	{	
-		//OCR0B = 20;
-		
-		
+		setAdValuetoTimerTOP();		
 	}
-}
-
-ISR(TIMER0_COMPA_vect) {
-    static int8_t repetition = 0;
-
-	if(repetition)
-	{
-		PORTA = 0x01;
-		repetition--;
-	}
-	else
-	{		
-		PORTA = 0b00000011;
-		repetition++;
-	}
-	OCR0A = ADCW>>2;
 }
