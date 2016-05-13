@@ -130,17 +130,12 @@ int main(void)
 }
 
 ISR(TIMER0_COMPA_vect) {
-    static int8_t repetition = 0;
-
-	if(repetition)
-	{
-		PORTA = 0x01;
-		repetition--;
-	}
-	else
-	{		
-		PORTA = 0b00000011;
-		repetition++;
-	}
-	OCR0A = ADCW>>2;
+	//Start PULSE
+	PORTA = 0x01;
+	
+	//DO other stuff	
+	OCR0A = 15000/ADCW;
+	
+	//End PULSE
+	PORTA = 0b00000011;
 }
