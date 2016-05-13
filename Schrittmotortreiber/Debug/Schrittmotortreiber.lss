@@ -1,0 +1,180 @@
+
+Schrittmotortreiber.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000000ca  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .bss          00000001  00800060  00800060  0000013e  2**0
+                  ALLOC
+  2 .comment      00000030  00000000  00000000  0000013e  2**0
+                  CONTENTS, READONLY
+  3 .debug_aranges 00000048  00000000  00000000  0000016e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_info   00000270  00000000  00000000  000001b6  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_abbrev 0000017a  00000000  00000000  00000426  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_line   000001b0  00000000  00000000  000005a0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_frame  00000088  00000000  00000000  00000750  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_str    00000231  00000000  00000000  000007d8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_loc    0000012e  00000000  00000000  00000a09  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_ranges 00000038  00000000  00000000  00000b37  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	12 c0       	rjmp	.+36     	; 0x26 <__ctors_end>
+   2:	1f c0       	rjmp	.+62     	; 0x42 <__bad_interrupt>
+   4:	1e c0       	rjmp	.+60     	; 0x42 <__bad_interrupt>
+   6:	1d c0       	rjmp	.+58     	; 0x42 <__bad_interrupt>
+   8:	1c c0       	rjmp	.+56     	; 0x42 <__bad_interrupt>
+   a:	1b c0       	rjmp	.+54     	; 0x42 <__bad_interrupt>
+   c:	1a c0       	rjmp	.+52     	; 0x42 <__bad_interrupt>
+   e:	19 c0       	rjmp	.+50     	; 0x42 <__bad_interrupt>
+  10:	18 c0       	rjmp	.+48     	; 0x42 <__bad_interrupt>
+  12:	17 c0       	rjmp	.+46     	; 0x42 <__bad_interrupt>
+  14:	16 c0       	rjmp	.+44     	; 0x42 <__bad_interrupt>
+  16:	15 c0       	rjmp	.+42     	; 0x42 <__bad_interrupt>
+  18:	14 c0       	rjmp	.+40     	; 0x42 <__bad_interrupt>
+  1a:	13 c0       	rjmp	.+38     	; 0x42 <__bad_interrupt>
+  1c:	2c c0       	rjmp	.+88     	; 0x76 <__vector_14>
+  1e:	11 c0       	rjmp	.+34     	; 0x42 <__bad_interrupt>
+  20:	10 c0       	rjmp	.+32     	; 0x42 <__bad_interrupt>
+  22:	0f c0       	rjmp	.+30     	; 0x42 <__bad_interrupt>
+  24:	0e c0       	rjmp	.+28     	; 0x42 <__bad_interrupt>
+
+00000026 <__ctors_end>:
+  26:	11 24       	eor	r1, r1
+  28:	1f be       	out	0x3f, r1	; 63
+  2a:	cf ed       	ldi	r28, 0xDF	; 223
+  2c:	cd bf       	out	0x3d, r28	; 61
+
+0000002e <__do_clear_bss>:
+  2e:	20 e0       	ldi	r18, 0x00	; 0
+  30:	a0 e6       	ldi	r26, 0x60	; 96
+  32:	b0 e0       	ldi	r27, 0x00	; 0
+  34:	01 c0       	rjmp	.+2      	; 0x38 <.do_clear_bss_start>
+
+00000036 <.do_clear_bss_loop>:
+  36:	1d 92       	st	X+, r1
+
+00000038 <.do_clear_bss_start>:
+  38:	a1 36       	cpi	r26, 0x61	; 97
+  3a:	b2 07       	cpc	r27, r18
+  3c:	e1 f7       	brne	.-8      	; 0x36 <.do_clear_bss_loop>
+  3e:	0c d0       	rcall	.+24     	; 0x58 <main>
+  40:	42 c0       	rjmp	.+132    	; 0xc6 <_exit>
+
+00000042 <__bad_interrupt>:
+  42:	de cf       	rjmp	.-68     	; 0x0 <__vectors>
+
+00000044 <ADC_Init>:
+	{
+		*zaehler = 0;
+		PORTA = 0b00000011;			
+	}
+	
+  	if(deltav_zaehler > deltav_zmax)
+  44:	87 e2       	ldi	r24, 0x27	; 39
+  46:	86 b9       	out	0x06, r24	; 6
+  48:	13 b8       	out	0x03, r1	; 3
+  	{
+		if(*adcval > *steptime)
+  4a:	87 b1       	in	r24, 0x07	; 7
+  4c:	80 7e       	andi	r24, 0xE0	; 224
+  4e:	83 60       	ori	r24, 0x03	; 3
+  50:	87 b9       	out	0x07, r24	; 7
+  52:	37 9a       	sbi	0x06, 7	; 6
+  54:	36 9a       	sbi	0x06, 6	; 6
+  56:	08 95       	ret
+
+00000058 <main>:
+  58:	8f e0       	ldi	r24, 0x0F	; 15
+			{
+				*steptime += 1;
+  5a:	8a bb       	out	0x1a, r24	; 26
+  5c:	81 e0       	ldi	r24, 0x01	; 1
+  5e:	85 bb       	out	0x15, r24	; 21
+				deltav_zaehler = 0;
+  60:	83 e0       	ldi	r24, 0x03	; 3
+  62:	83 bf       	out	0x33, r24	; 51
+  64:	8a ea       	ldi	r24, 0xAA	; 170
+  66:	83 bb       	out	0x13, r24	; 19
+  68:	89 b7       	in	r24, 0x39	; 57
+			}
+			else if(*adcval < *steptime)
+  6a:	80 61       	ori	r24, 0x10	; 16
+  6c:	89 bf       	out	0x39, r24	; 57
+  6e:	ea df       	rcall	.-44     	; 0x44 <ADC_Init>
+			{
+				*steptime -= 1;
+  70:	78 94       	sei
+  72:	12 be       	out	0x32, r1	; 50
+  74:	ff cf       	rjmp	.-2      	; 0x74 <main+0x1c>
+
+00000076 <__vector_14>:
+				deltav_zaehler = 0;
+  76:	1f 92       	push	r1
+  78:	0f 92       	push	r0
+  7a:	0f b6       	in	r0, 0x3f	; 63
+  7c:	0f 92       	push	r0
+			}
+}
+	deltav_zaehler++;
+  7e:	11 24       	eor	r1, r1
+  80:	8f 93       	push	r24
+  82:	9f 93       	push	r25
+  84:	80 91 60 00 	lds	r24, 0x0060
+  88:	88 23       	and	r24, r24
+  8a:	41 f0       	breq	.+16     	; 0x9c <__vector_14+0x26>
+  8c:	81 e0       	ldi	r24, 0x01	; 1
+  8e:	8b bb       	out	0x1b, r24	; 27
+  90:	80 91 60 00 	lds	r24, 0x0060
+    static int8_t repetition = 0;
+
+	if(repetition)
+	{
+		PORTA = 0x01;
+		repetition--;
+  94:	81 50       	subi	r24, 0x01	; 1
+  96:	80 93 60 00 	sts	0x0060, r24
+  9a:	07 c0       	rjmp	.+14     	; 0xaa <__vector_14+0x34>
+	}
+	else
+	{		
+		PORTA = 0b00000011;
+  9c:	83 e0       	ldi	r24, 0x03	; 3
+  9e:	8b bb       	out	0x1b, r24	; 27
+		repetition++;
+  a0:	80 91 60 00 	lds	r24, 0x0060
+  a4:	8f 5f       	subi	r24, 0xFF	; 255
+  a6:	80 93 60 00 	sts	0x0060, r24
+	}
+	OCR0A = ADCW>>2;
+  aa:	84 b1       	in	r24, 0x04	; 4
+  ac:	95 b1       	in	r25, 0x05	; 5
+  ae:	96 95       	lsr	r25
+  b0:	87 95       	ror	r24
+  b2:	96 95       	lsr	r25
+  b4:	87 95       	ror	r24
+  b6:	83 bb       	out	0x13, r24	; 19
+}
+  b8:	9f 91       	pop	r25
+  ba:	8f 91       	pop	r24
+  bc:	0f 90       	pop	r0
+  be:	0f be       	out	0x3f, r0	; 63
+  c0:	0f 90       	pop	r0
+  c2:	1f 90       	pop	r1
+  c4:	18 95       	reti
+
+000000c6 <_exit>:
+  c6:	f8 94       	cli
+
+000000c8 <__stop_program>:
+  c8:	ff cf       	rjmp	.-2      	; 0xc8 <__stop_program>
