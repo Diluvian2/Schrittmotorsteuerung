@@ -2,8 +2,6 @@ Archive member included because of file (symbol)
 
 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr25/tiny-stack\libgcc.a(_exit.o)
                               c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr25/tiny-stack/crttn261a.o (exit)
-c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr25/tiny-stack\libgcc.a(_clear_bss.o)
-                              Schrittmotortreiber.o (__do_clear_bss)
 
 Discarded input sections
 
@@ -12,18 +10,6 @@ Discarded input sections
  .text          0x00000000        0x0 Schrittmotortreiber.o
  .data          0x00000000        0x0 Schrittmotortreiber.o
  .bss           0x00000000        0x0 Schrittmotortreiber.o
- .text.ADC_Read
-                0x00000000       0x2a Schrittmotortreiber.o
- .text.delay_us
-                0x00000000       0x14 Schrittmotortreiber.o
- .text.turn_motor
-                0x00000000       0x92 Schrittmotortreiber.o
- .bss.deltav_zaehler.1607
-                0x00000000        0x2 Schrittmotortreiber.o
- .bss.powerduration_steps.1610
-                0x00000000        0x2 Schrittmotortreiber.o
- .bss.last_val.1595
-                0x00000000        0x2 Schrittmotortreiber.o
  .text          0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr25/tiny-stack\libgcc.a(_exit.o)
  .data          0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr25/tiny-stack\libgcc.a(_exit.o)
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr25/tiny-stack\libgcc.a(_exit.o)
@@ -40,22 +26,6 @@ Discarded input sections
                 0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr25/tiny-stack\libgcc.a(_exit.o)
  .text.libgcc.fixed
                 0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr25/tiny-stack\libgcc.a(_exit.o)
- .text          0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr25/tiny-stack\libgcc.a(_clear_bss.o)
- .data          0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr25/tiny-stack\libgcc.a(_clear_bss.o)
- .bss           0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr25/tiny-stack\libgcc.a(_clear_bss.o)
- .text.libgcc.mul
-                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr25/tiny-stack\libgcc.a(_clear_bss.o)
- .text.libgcc.div
-                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr25/tiny-stack\libgcc.a(_clear_bss.o)
- .text.libgcc   0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr25/tiny-stack\libgcc.a(_clear_bss.o)
- .text.libgcc.prologue
-                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr25/tiny-stack\libgcc.a(_clear_bss.o)
- .text.libgcc.builtins
-                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr25/tiny-stack\libgcc.a(_clear_bss.o)
- .text.libgcc.fmul
-                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr25/tiny-stack\libgcc.a(_clear_bss.o)
- .text.libgcc.fixed
-                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr25/tiny-stack\libgcc.a(_clear_bss.o)
 
 Memory Configuration
 
@@ -172,7 +142,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000       0xca
+.text           0x00000000       0x7a
  *(.vectors)
  .vectors       0x00000000       0x26 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr25/tiny-stack/crttn261a.o
                 0x00000000                __vector_default
@@ -211,8 +181,6 @@ END GROUP
  *(.init3)
  *(.init3)
  *(.init4)
- .init4         0x0000002e       0x10 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr25/tiny-stack\libgcc.a(_clear_bss.o)
-                0x0000002e                __do_clear_bss
  *(.init4)
  *(.init5)
  *(.init5)
@@ -223,43 +191,44 @@ END GROUP
  *(.init8)
  *(.init8)
  *(.init9)
- .init9         0x0000003e        0x4 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr25/tiny-stack/crttn261a.o
+ .init9         0x0000002e        0x4 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr25/tiny-stack/crttn261a.o
  *(.init9)
  *(.text)
- .text          0x00000042        0x2 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr25/tiny-stack/crttn261a.o
-                0x00000042                __vector_1
-                0x00000042                __vector_12
-                0x00000042                __bad_interrupt
-                0x00000042                __vector_6
-                0x00000042                __vector_3
-                0x00000042                __vector_11
-                0x00000042                __vector_13
-                0x00000042                __vector_17
-                0x00000042                __vector_7
-                0x00000042                __vector_5
-                0x00000042                __vector_4
-                0x00000042                __vector_9
-                0x00000042                __vector_2
-                0x00000042                __vector_15
-                0x00000042                __vector_8
-                0x00000042                __vector_10
-                0x00000042                __vector_16
-                0x00000042                __vector_18
-                0x00000044                . = ALIGN (0x2)
+ .text          0x00000032        0x2 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/../../../../avr/lib/avr25/tiny-stack/crttn261a.o
+                0x00000032                __vector_1
+                0x00000032                __vector_12
+                0x00000032                __bad_interrupt
+                0x00000032                __vector_6
+                0x00000032                __vector_3
+                0x00000032                __vector_11
+                0x00000032                __vector_13
+                0x00000032                __vector_17
+                0x00000032                __vector_7
+                0x00000032                __vector_5
+                0x00000032                __vector_4
+                0x00000032                __vector_9
+                0x00000032                __vector_2
+                0x00000032                __vector_15
+                0x00000032                __vector_8
+                0x00000032                __vector_14
+                0x00000032                __vector_10
+                0x00000032                __vector_16
+                0x00000032                __vector_18
+                0x00000034                . = ALIGN (0x2)
  *(.text.*)
  .text.ADC_Init
-                0x00000044       0x14 Schrittmotortreiber.o
-                0x00000044                ADC_Init
- .text.main     0x00000058       0x1e Schrittmotortreiber.o
-                0x00000058                main
- .text.__vector_14
-                0x00000076       0x50 Schrittmotortreiber.o
-                0x00000076                __vector_14
-                0x000000c6                . = ALIGN (0x2)
+                0x00000034       0x14 Schrittmotortreiber.o
+                0x00000034                ADC_Init
+ .text.setTimerFromADC
+                0x00000048        0xe Schrittmotortreiber.o
+                0x00000048                setTimerFromADC
+ .text.main     0x00000056       0x20 Schrittmotortreiber.o
+                0x00000056                main
+                0x00000076                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x000000c6        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr25/tiny-stack\libgcc.a(_exit.o)
-                0x000000c6                _exit
-                0x000000c6                exit
+ .fini9         0x00000076        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr25/tiny-stack\libgcc.a(_exit.o)
+                0x00000076                _exit
+                0x00000076                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -278,11 +247,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x000000c6        0x4 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr25/tiny-stack\libgcc.a(_exit.o)
+ .fini0         0x00000076        0x4 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.1061/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.8.1/avr25/tiny-stack\libgcc.a(_exit.o)
  *(.fini0)
-                0x000000ca                _etext = .
+                0x0000007a                _etext = .
 
-.data           0x00800060        0x0 load address 0x000000ca
+.data           0x00800060        0x0 load address 0x0000007a
                 0x00800060                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -293,23 +262,21 @@ END GROUP
                 0x00800060                _edata = .
                 0x00800060                PROVIDE (__data_end, .)
 
-.bss            0x00800060        0x1
+.bss            0x00800060        0x0
                 0x00800060                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
- .bss.repetition.1620
-                0x00800060        0x1 Schrittmotortreiber.o
  *(COMMON)
-                0x00800061                PROVIDE (__bss_end, .)
-                0x000000ca                __data_load_start = LOADADDR (.data)
-                0x000000ca                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00800060                PROVIDE (__bss_end, .)
+                0x0000007a                __data_load_start = LOADADDR (.data)
+                0x0000007a                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x00800061        0x0
-                0x00800061                PROVIDE (__noinit_start, .)
+.noinit         0x00800060        0x0
+                0x00800060                PROVIDE (__noinit_start, .)
  *(.noinit*)
-                0x00800061                PROVIDE (__noinit_end, .)
-                0x00800061                _end = .
-                0x00800061                PROVIDE (__heap_start, .)
+                0x00800060                PROVIDE (__noinit_end, .)
+                0x00800060                _end = .
+                0x00800060                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
  *(.eeprom*)
@@ -368,38 +335,37 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000       0x48
+.debug_aranges  0x00000000       0x30
  *(.debug_aranges)
  .debug_aranges
-                0x00000000       0x48 Schrittmotortreiber.o
+                0x00000000       0x30 Schrittmotortreiber.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000      0x270
+.debug_info     0x00000000       0xd0
  *(.debug_info .gnu.linkonce.wi.*)
- .debug_info    0x00000000      0x270 Schrittmotortreiber.o
+ .debug_info    0x00000000       0xd0 Schrittmotortreiber.o
 
-.debug_abbrev   0x00000000      0x17a
+.debug_abbrev   0x00000000       0x8c
  *(.debug_abbrev)
- .debug_abbrev  0x00000000      0x17a Schrittmotortreiber.o
+ .debug_abbrev  0x00000000       0x8c Schrittmotortreiber.o
 
-.debug_line     0x00000000      0x1b0
+.debug_line     0x00000000       0xeb
  *(.debug_line .debug_line.* .debug_line_end)
- .debug_line    0x00000000      0x1b0 Schrittmotortreiber.o
+ .debug_line    0x00000000       0xeb Schrittmotortreiber.o
 
-.debug_frame    0x00000000       0x88
+.debug_frame    0x00000000       0x44
  *(.debug_frame)
- .debug_frame   0x00000000       0x88 Schrittmotortreiber.o
+ .debug_frame   0x00000000       0x44 Schrittmotortreiber.o
 
-.debug_str      0x00000000      0x231
+.debug_str      0x00000000      0x15c
  *(.debug_str)
- .debug_str     0x00000000      0x231 Schrittmotortreiber.o
-                                0x285 (size before relaxing)
+ .debug_str     0x00000000      0x15c Schrittmotortreiber.o
+                                0x190 (size before relaxing)
 
-.debug_loc      0x00000000      0x12e
+.debug_loc
  *(.debug_loc)
- .debug_loc     0x00000000      0x12e Schrittmotortreiber.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -419,9 +385,9 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x00000000       0x38
+.debug_ranges   0x00000000       0x20
  *(.debug_ranges)
- .debug_ranges  0x00000000       0x38 Schrittmotortreiber.o
+ .debug_ranges  0x00000000       0x20 Schrittmotortreiber.o
 
 .debug_macro
  *(.debug_macro)
